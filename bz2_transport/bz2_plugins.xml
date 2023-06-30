@@ -1,0 +1,42 @@
+
+
+
+
+
+<library path="lib/libbz2_transport">
+
+  <class name="bz2_transport/raw_cm_pub" 
+		type="message_transport::RawPublisher<cm_transport::Packet>" 
+		base_class_type="message_transport::PublisherPlugin<cm_transport::Packet>">
+    <description>
+      This is the default publisher. It publishes the objects as-is on the base topic.
+    </description>
+  </class>
+
+  <class name="bz2_transport/raw_cm_sub" 
+		type="message_transport::RawSubscriber<cm_transport::Packet>" 
+		base_class_type="message_transport::SubscriberPlugin<cm_transport::Packet>">
+    <description>
+      This is the default pass-through subscriber for topics of type cm_transport::Packet
+    </description>
+  </class>
+
+  <class name="bz2_transport/bz2_cm_pub" 
+		type="bz2_transport::BZ2Publisher<cm_transport::Packet>" 
+		base_class_type="message_transport::PublisherPlugin<cm_transport::Packet>">
+    <description>
+        This publisher publishes its type as BZ2 compressed binary
+        blobs
+    </description>
+  </class>
+
+  <class name="bz2_transport/bz2_cm_sub" 
+		type="bz2_transport::BZ2Subscriber<cm_transport::Packet>" 
+		base_class_type="message_transport::SubscriberPlugin<cm_transport::Packet>">
+    <description>
+        This subscriber subscribes to BZ2 binary blobs
+    </description>
+  </class>
+
+
+</library>

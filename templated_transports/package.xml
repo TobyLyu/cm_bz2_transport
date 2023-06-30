@@ -1,0 +1,31 @@
+<package>
+  <name>templated_transports</name>
+  <version>0.3.6</version>
+  <description>templated_transports</description>
+  <maintainer email="qiyang.lyu@ntu.edu.sg">Qiyang Lyu</maintainer>
+  <author>Cedric Pradalier</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend> 
+  <build_depend>pluginlib</build_depend> 
+  <build_depend>message_transport</build_depend> 
+  <build_depend>bz2_transport</build_depend> 
+  <build_depend>m4</build_depend> 
+
+  <run_depend>roscpp</run_depend> 
+  <run_depend>bz2_transport</run_depend>
+  <run_depend>message_transport</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>m4</run_depend>
+
+  <export>
+    <cpp cflags="-I${prefix}/include"/>
+    <!-- This causes this cmake directory to be available to depending packages -->
+    <rosbuild cmake_directory="${prefix}/cmake"/>
+  </export>
+  <!-- <rosdep name="m4"/> -->
+</package>
+
+
