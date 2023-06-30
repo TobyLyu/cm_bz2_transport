@@ -25,10 +25,9 @@ catkin_package(
   LIBRARIES ${PROJECT_NAME}
 )
 
-catkin_install_python(PROGRAMS 
-  scripts/republish.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# catkin_install_python(PROGRAMS 
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ###########
 ## Build ##
@@ -56,13 +55,6 @@ target_link_libraries(${PROJECT_NAME}_node
   ${PROJECT_NAME}
   ${avcodec_LIBRARIES}
   ${swscale_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-)
-
-add_executable(stereo_fusion nodes/stereo_fusion.cpp)
-target_link_libraries(stereo_fusion
-  ${PROJECT_NAME}
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
 )
